@@ -1,10 +1,11 @@
 import React from 'react';
+import { sampleData } from './components/TreemapDemo/sampleData';
+import { TreemapDemo } from './components/TreemapDemo/TreemapDemo';
 
 function App() {
+  const data = sampleData;
   return (
-    <div>
-      React is working with rewired
-    </div>
+    <TreemapDemo data={data} title={"Demo"} />
   );
 }
 
