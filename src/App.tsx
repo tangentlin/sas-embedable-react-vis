@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      React is working
+      React is working with rewired
     </div>
   );
 }
