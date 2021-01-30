@@ -5,5 +5,5 @@
 At the root of the project
 
 ```shell
-npm run new:fc src/folder/YourNewComponent
+npm run new:fc src/components/YourNewComponent
 ```
