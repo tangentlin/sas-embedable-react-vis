@@ -1,5 +1,6 @@
 var InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
 
 module.exports = function override(config, env) {
   const plugins = config.plugins;
@@ -10,5 +11,7 @@ module.exports = function override(config, env) {
       plugins[index] = overridePlugin;
     }
   });
+  // Inline all CSS file imports
+  plugins.push(new HTMLInlineCSSWebpackPlugin());
   return config;
 }
