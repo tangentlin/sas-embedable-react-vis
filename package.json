@@ -22,7 +22,7 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "@scalable/reactgen": "^0.3.6",
+    "@scalable/reactgen": "^0.3.7",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
