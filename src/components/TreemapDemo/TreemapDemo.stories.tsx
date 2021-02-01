@@ -1,5 +1,5 @@
 import React from 'react';
-import { sampleData } from './sampleData';
+import { sampleData, sampleDetail } from './sampleData';
 import { TreemapDemo } from './TreemapDemo';
 
 export default {
