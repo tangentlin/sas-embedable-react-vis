@@ -19,9 +19,8 @@ export const TreemapDemo: FunctionComponent<TreemapDemoProps> = (props) => {
         width={500}
         height={300}
         colorType={'literal'}
-        colorRange={['#88572C']}
         animation={true}
-        getColor={d => d.hex}
+        getColor={d => d.color}
         title={props.title}
         data={props.data} />
     </Container>

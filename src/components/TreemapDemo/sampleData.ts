@@ -1,6 +1,9 @@
 import { TreemapPoint } from "react-vis";
 import * as React from 'react';
 
+const negative = '#f44336';
+const positive = '#388e3c';
+
 const commonStyle: React.CSSProperties = {border: '1px solid #000000'};
 
 /**
@@ -8,32 +11,62 @@ const commonStyle: React.CSSProperties = {border: '1px solid #000000'};
  */
 export const sampleData: TreemapPoint = {
   title: "analytics",
-  color: "#12939A",
+  color: "#333333",
   children: [
     {
-      title: "cluster",
+      title: "Technology",
       children: [
-        {title: "AgglomerativeCluster", color: "#12939A", size: 3938, style: commonStyle },
-        {title: "CommunityStructure", color: "#12939A", size: 3812, style: commonStyle},
-        {title: "HierarchicalCluster", color: "#12939A", size: 6714, style: commonStyle},
-        {title: "MergeEdge", color: "#12939A", size: 743, style: commonStyle}
+        {title: "FB", color: negative, size: 3938, style: commonStyle },
+        {title: "AAPL", color: negative, size: 3812, style: commonStyle},
+        {title: "MSFT", color: positive, size: 6714, style: commonStyle},
+        {title: "GOOG", color: positive, size: 2743, style: commonStyle}
       ]
     },
     {
-      title: "graph",
+      title: "Automotive",
       children: [
-        {title: "BetweennessCentrality", color: "#12939A", size: 3534, style: commonStyle},
-        {title: "LinkDistance", color: "#12939A", size: 5731, style: commonStyle},
-        {title: "MaxFlowMinCut", color: "#12939A", size: 7840, style: commonStyle},
-        {title: "ShortestPaths", color: "#12939A", size: 5914, style: commonStyle},
-        {title: "SpanningTree", color: "#12939A", size: 3416, style: commonStyle}
+        {title: "F", color: positive, size: 3534, style: commonStyle},
+        {title: "GM", color: positive, size: 5731, style: commonStyle},
+        {title: "TSLA", color: negative, size: 7840, style: commonStyle},
       ]
     },
-    {
-      title: "optimization",
-      children: [
-        {title: "AspectRatioBanker", color: "#12939A", size: 7074, style: commonStyle}
-      ]
-    }
   ]
 }
+
+export interface IDetailData {
+  price: number;
+  high: number;
+  low: number;
+  priceHistory: number[]; // This would be better as an array date/price tuple
+}
+
+const detail1: IDetailData = {
+  price: 362.5,
+  high: 372.2,
+  low: 220.3,
+  priceHistory: []
+};
+
+const detail2: IDetailData = {
+  price: 150.3,
+  high: 169.0,
+  low: 1430.2,
+  priceHistory: []
+};
+
+const detail3: IDetailData = {
+  price: 805.3,
+  high: 842.0,
+  low: 795.2,
+  priceHistory: []
+};
+
+export const sampleDetail: Map<string, IDetailData> = new Map<string, IDetailData>([
+  [ 'FB', detail1 ],
+  [ 'AAPL', detail2 ],
+  [ 'MSFT', detail3 ],
+  [ 'GOOG', detail1 ],
+  [ 'F', detail1 ],
+  [ 'GM', detail2 ],
+  [ 'TSLA', detail3 ],
+]);
